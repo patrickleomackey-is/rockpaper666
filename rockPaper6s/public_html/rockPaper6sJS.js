@@ -4,6 +4,8 @@ let tie = [], cpWins=[], Uwins=[];radioButtons = [];
 
 
 function cpThrow(){ 
+    
+    
     Random = Number(Math.floor(Math.random()*3));
     
     if (Random === 0){
@@ -74,3 +76,4 @@ function Validate(){
            }        
 document.write(''+cpWins+" "+ Uwins + " "+ tie);
 
+    
