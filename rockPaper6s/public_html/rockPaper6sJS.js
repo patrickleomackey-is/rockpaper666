@@ -1,6 +1,6 @@
 /* Patrick Mackey CIS 119 Prof. K. Miller
  */
-let tie = [], cpWins=[], Uwins=[];radioButtons = [];
+let tie = [], cpWins=[], Uwins=[];
 
 
 function cpThrow(){ 
@@ -49,29 +49,29 @@ function Validate(){
     var i = 0;
     for (i=0;i < radioButtons.length;i++){
         if (radioButtons[i].checked === true){
-           Athrow = Number(radioButtons[i].value);
+           Athrow = radioButtons[i].checked.value;
        }
   
    
-    if ((Athrow === 0)&&(Random === '0'))
+    if ((Athrow === 0)&&(Random === 0))
     {alert ("you tied");
         tie++;} 
-     if ((Athrow === 0)&&(Random === '2'))
+     if ((Athrow === 0)&&(Random === 2))
     {alert("you win");Uwins++;} 
-     if ((Athrow === 0)&&(Random === '1'))
-    {cpWins++;}
-     if ((Athrow === 1)&&(Random === '1'))
-    {tie++;}
-     if ((Athrow === 1)&&(Random === '0'))
-    {Uwins++;}
-    if ((Athrow === 1)&&(Random === '2'))
-    {cpWins++;}
-    if ((Athrow === 2)&&(Random === '2'))
-    {tie++;}
-     if ((Athrow === 2)&&(Random === '1'))
-    {Uwins++;}
-     if ((Athrow === 2)&&(Random ==='0'))
-    {cpWins++;}
+     if ((Athrow === 0)&&(Random === 1))
+    {alert("you lost");cpWins++;}
+     if ((Athrow === 1)&&(Random === 1))
+    {alert ('you tied');tie++;}
+     if ((Athrow === 1)&&(Random === 0))
+    {alert("you won");Uwins++;}
+    if ((Athrow === 1)&&(Random === 2))
+    {alert('you lost');cpWins++;}
+    if ((Athrow === 2)&&(Random === 2))
+    {alert("you tied");tie++;}
+     if ((Athrow === 2)&&(Random === 1))
+    {alert ("you won");Uwins++;}
+     if ((Athrow === 2)&&(Random === 0))
+    {alert("you lost");cpWins++;}
                }        
            }        
 document.write(''+cpWins+" "+ Uwins + " "+ tie);
