@@ -45,11 +45,12 @@ document.addEventListener("submit",cpThrow());
      
 function Validate(){
     
-    var radioButtons = document.getElementsByName("userThrow").checked;
-    var i = 0;
+    var radioButtons = document.getElementsByName("userThrow");
+   
     for (i=0;i < radioButtons.length;i++){
-        if (radioButtons[i].checked === true){
-           Athrow = radioButtons[i].checked.value;
+        userPick = radioButtons[i];
+        if (userPick.checked === true){
+           Athrow = userPick.value;
        }
   
    
