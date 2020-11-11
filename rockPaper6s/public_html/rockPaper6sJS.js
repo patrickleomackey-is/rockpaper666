@@ -1,5 +1,6 @@
 /* Patrick Mackey CIS 119 Prof. K. Miller
  */
+/* global aThrow */
 let tie = [], cpWins=[], Uwins=[];
 
 
@@ -37,7 +38,7 @@ document.addEventListener("submit",cpThrow());
 
 
 
-
+document.write(document.getElementsByType('radio').value);
 
 
 
@@ -45,36 +46,37 @@ document.addEventListener("submit",cpThrow());
      
 function Validate(){
     
-    var radioButtons = document.getElementsByName("userThrow");
-   
-    for (i=0;i < radioButtons.length;i++){
-        userPick = radioButtons[i];
-        if (userPick.checked === true){
-           Athrow = userPick.value;
+    var radioButtons = document.getElementsByTagName("input");
+    var Athrow;
+    for(i=0;i < radioButtons.length;++i){
+       if (radioButtons[i].checked === 'true'){
+        Athrow = radioButtons[i];
        }
-  
-   
-    if ((Athrow === 0)&&(Random === 0))
-    {alert ("you tied");
+
+    if ((Athrow === 0 && Random === 0))
+    {document.write("you tied");
         tie++;} 
-     if ((Athrow === 0)&&(Random === 2))
-    {alert("you win");Uwins++;} 
-     if ((Athrow === 0)&&(Random === 1))
-    {alert("you lost");cpWins++;}
-     if ((Athrow === 1)&&(Random === 1))
-    {alert ('you tied');tie++;}
-     if ((Athrow === 1)&&(Random === 0))
-    {alert("you won");Uwins++;}
-    if ((Athrow === 1)&&(Random === 2))
-    {alert('you lost');cpWins++;}
-    if ((Athrow === 2)&&(Random === 2))
-    {alert("you tied");tie++;}
-     if ((Athrow === 2)&&(Random === 1))
-    {alert ("you won");Uwins++;}
-     if ((Athrow === 2)&&(Random === 0))
-    {alert("you lost");cpWins++;}
+      if ((Athrow === 0 && Random === 2))
+    {document.write("you win");Uwins++;} 
+    if ((Athrow === 0 && Random === 1))
+    {document.write("you lost"+ "1");cpWins++;}
+    if ((Athrow === 1 && Random === 1))
+    {document.write('you tied');tie++;}
+   if ((Athrow === 1 && Random === 0))
+    {document.write("you won");Uwins++;}
+    if ((Athrow === 1 && Random === 2))
+    {document.write('you lost'+"2");cpWins++;}
+    if ((Athrow === 2 && Random === 2))
+    {document.write("you tied");tie++;}
+     if ((Athrow === 2 && Random === 1))
+    {document.write("you won");Uwins++;}
+  if((Athrow === 2 && Random === 0));
+    {document.write(Athrow+"you lost"+'3');cpWins++;}
                }        
            }        
-document.write(''+cpWins+" "+ Uwins + " "+ tie);
 
-    
+
+    function capture(){
+        throws = document.getElementsByName('userThrow').checked.value;
+        document.write(''+ throws);
+    }
